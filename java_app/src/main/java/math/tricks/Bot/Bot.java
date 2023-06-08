@@ -1,12 +1,15 @@
 package math.tricks.Bot;
 
 
+import lombok.NoArgsConstructor;
+
 import java.util.Scanner;
 
 enum SkillLevel {
     NOOB, MID, PRO
 }
 
+@NoArgsConstructor
 public class Bot {
 
     SkillLevel skillLevel;
@@ -18,19 +21,22 @@ public class Bot {
         String skillLevel = sc.nextLine();
 
         switch (skillLevel) {
-            case "Nooby" -> {
+            case "Nooby":
                 this.skillLevel = SkillLevel.NOOB;
-            }
-            case "Medium" -> {
+                break;
+
+            case "Medium":
                 this.skillLevel = SkillLevel.MID;
-            }
-            case "Gigga" -> {
+                break;
+
+            case "Gigga":
                 this.skillLevel = SkillLevel.PRO;
-            }
-            default -> {
+                break;
+
+            default:
                 System.out.println("Please choose a valid option (Nooby / Medium / Gigga)");
                 this.generate();
-            }
+                break;
         }
 
         return this;
